@@ -9,7 +9,7 @@ function setup() {
     translateX = createSlider(-1 * (width/2), width/2, 1, 50);
     translateX.position(10, 35);
     translateX.style('width', '120px');
-    translateY = createSlider(-1 * (height/2), height/2, 1, 50);
+    translateY = createSlider(-1 * ((height-100)/2), (height-100)/2, 1, 50);
     translateY.position(10, 60);
     translateY.style('width', '120px');
     flipX = createSlider(0, 1, 0, 1);
@@ -62,9 +62,15 @@ function textSetup() {
 
 function drawSliderText() {
     textAlign(LEFT);
-    text("A value", 140, 28)
-    text("Translate X", 140, 52)
-    text("Translate Y", 140, 76)
+    if(aValue.value() == 0) {
+        text("A value: 1", 140, 28)
+    } else if(aValue.value() > 1){
+        text("A value: " + parseFloat(1/aValue.value()).toFixed(2), 140, 28);
+    } else {
+        text("A value: " + Math.abs(aValue.value()), 140, 28);
+    }
+    text("Translate X: " + translateX.value()/50, 140, 52)
+    text("Translate Y: " + -translateY.value()/50, 140, 76)
     text("Flip horizontally", 140, 100)
     text("Flip vertically", 140, 124)
 }
@@ -75,7 +81,7 @@ function drawCoords() {
         if(i > 0) {
             line(width/2 - 5, i, width/2  + 5, i);
             if(((i - height/2) / 50) != 0) {
-                text((i - height/2) / 50, width/2 + 20, i + 5);
+                text(-((i - height/2) / 50), width/2 + 20, i + 5);
             }
         }
     }
@@ -118,10 +124,9 @@ class quadratic {
         else {
             if(this.a > 0) {
                 arc(this.x + this.tx, this.y + this.ty + height * 4, this.width * this.a, this.height, PI, 0);
-                print(this.y + this.ty + height * 1.5);
             }
             else {
-                arc(this.x + this.tx, this.y + this.ty, this.width / this.a, this.height, PI, 0);
+                arc(this.x + this.tx, this.y + this.ty + height * 4, this.width / this.a, this.height, PI, 0);
             }
         }
     }
