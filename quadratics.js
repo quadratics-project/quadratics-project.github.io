@@ -3,10 +3,22 @@ var q;
 
 function setup() {
     createCanvas(800, 800);
-    aValue = createSlider(-8, 8, 1, 1);
+    aValue = createSlider(-8, 8, 0, 1);
     aValue.position(10, 10);
     aValue.style('width', '120px');
-    q = new quadratic(width/2, 0, width * 0.25, height, 0, PI); //parent var q = new quadratic(width/2, 0, width * 0.25, height, 0, PI);
+    translateX = createSlider(-1 * (width/2), width/2, 1, 50);
+    translateX.position(10, 35);
+    translateX.style('width', '120px');
+    translateY = createSlider(-1 * (height/2), height/2, 1, 50);
+    translateY.position(10, 60);
+    translateY.style('width', '120px');
+    flipX = createSlider(0, 1, 0, 1);
+    flipX.position(10, 85);
+    flipX.style('width', '120px');
+    flipY = createSlider(0, 1, 0, 1);
+    flipY.position(10, 110);
+    flipY.style('width', '120px');
+    q = new quadratic(width/2, (-height) - height/2, width * 0.25, height*4, 0, PI); //parent var q = new quadratic(width/2, 0, width * 0.25, height, 0, PI);
 }
 
 function draw() {
@@ -30,6 +42,9 @@ function draw() {
     if(stretch != 0) {
         q.setA(stretch);
     }
+    q.setTransformX(translateX.value());
+    q.setTransformY(translateY.value());
+    q.setDir(flipY.value());
 }
 
 function arcSetup() {
@@ -48,6 +63,10 @@ function textSetup() {
 function drawSliderText() {
     textAlign(LEFT);
     text("A value", 140, 28)
+    text("Translate X", 140, 52)
+    text("Translate Y", 140, 76)
+    text("Flip horizontally", 140, 100)
+    text("Flip vertically", 140, 124)
 }
 
 function drawCoords() {
@@ -82,20 +101,42 @@ class quadratic {
         this.p1 = p1;
         this.p2 = p2;
         this.a = 1;
+        this.tx = 0;
+        this.ty = 0;
+        this.dir = 0;
     }
 
     show() {
-        if(this.a > 0) {
-            arc(this.x, this.y, this.width * this.a, this.height, this.p1, this.p2);
+        if(this.dir == 0) {
+            if(this.a > 0) {
+                arc(this.x + this.tx, this.y + this.ty, this.width * this.a, this.height, this.p1, this.p2);
+            }
+            else {
+                arc(this.x + this.tx, this.y + this.ty, this.width / this.a, this.height, this.p1, this.p2);
+            }
         }
         else {
-            arc(this.x, this.y, this.width / this.a, this.height, this.p1, this.p2);
+            if(this.a > 0) {
+                arc(this.x + this.tx, this.y + this.ty + height * 4, this.width * this.a, this.height, PI, 0);
+                print(this.y + this.ty + height * 1.5);
+            }
+            else {
+                arc(this.x + this.tx, this.y + this.ty, this.width / this.a, this.height, PI, 0);
+            }
         }
-        //arc(width / 2, 0, width / (PI / 2), height * 2, 0, PI);
     }
 
     setA(val) {
         this.a = val;
+    }
+    setTransformX(val) {
+        this.tx = val;
+    }
+    setTransformY(val) {
+        this.ty = val;
+    }
+    setDir(val) {
+        this.dir = val;
     }
 }
 
