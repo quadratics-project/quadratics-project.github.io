@@ -47,6 +47,7 @@ body {
   text-align: center;
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
+  background-color: #E6E6E6;
 }
 
 h1 {
@@ -57,4 +58,9 @@ h1 {
 p {
   font-size: 16px;
   line-height: 1.2em;
+}
+
+.round-canvas {
+  /* border: 20px solid white; */
+  border-radius: 20px;
 }

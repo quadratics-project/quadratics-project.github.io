@@ -9,6 +9,7 @@ var canvas;
 
 function setup() {
     canvas = createCanvas(800, 800);
+    canvas.class('round-canvas');
     var cx = (windowWidth - width) / 2;
     var cy = (windowHeight - height) / 2;
     canvas.position(cx, cy);
@@ -94,18 +95,18 @@ function drawSliderText() {
     text("Flip vertically", 140, 124);
     textAlign(RIGHT);
     if (flipY.value() == 0) {
-        text("Min: " + -translateY.value() / 50, width - 10, 28);
-        text("Max: ∞", width - 10, 52);
-        text("Domain: (-∞, ∞)", width - 10, 76);
-        text("range: [" + -translateY.value() / 50 + ", ∞)", width - 10, 100);
+        text("Min: " + -translateY.value() / 50, width - 15, 28);
+        text("Max: ∞", width - 15, 52);
+        text("Domain: (-∞, ∞)", width - 15, 76);
+        text("range: [" + -translateY.value() / 50 + ", ∞)", width - 15, 100);
     } else {
-        text("Min: -∞", width - 10, 28);
-        text("Max: " + -translateY.value() / 50, width - 10, 52);
-        text("Domain: (-∞, ∞)", width - 10, 76);
-        text("range: ( -∞, " + -translateY.value() / 50 + "]", width - 10, 100);
+        text("Min: -∞", width - 15, 28);
+        text("Max: " + -translateY.value() / 50, width - 15, 52);
+        text("Domain: (-∞, ∞)", width - 15, 76);
+        text("range: ( -∞, " + -translateY.value() / 50 + "]", width - 15, 100);
     }
 
-    text("Vertex : (" + translateX.value() / 50 + ", " + -translateY.value() / 50 + ")", width - 10, 124);
+    text("Vertex : (" + translateX.value() / 50 + ", " + -translateY.value() / 50 + ")", width - 15, 124);
 }
 
 function drawCoords() {
