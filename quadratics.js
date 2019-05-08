@@ -69,10 +69,24 @@ function drawSliderText() {
     } else {
         text("A value: " + Math.abs(aValue.value()), 140, 28);
     }
-    text("Translate X: " + translateX.value()/50, 140, 52)
-    text("Translate Y: " + -translateY.value()/50, 140, 76)
-    text("Flip horizontally", 140, 100)
-    text("Flip vertically", 140, 124)
+    text("Translate X: " + translateX.value()/50, 140, 52);
+    text("Translate Y: " + -translateY.value()/50, 140, 76);
+    text("Flip horizontally", 140, 100);
+    text("Flip vertically", 140, 124);
+    textAlign(RIGHT);
+    if(flipY.value() == 0) {
+        text("Min: " + -translateY.value()/50, width - 10, 28);
+        text("Max: ∞", width - 10, 52);
+        text("Domain: (-∞, ∞)", width - 10, 76);
+        text("range: [" + -translateY.value()/50 + ", ∞)", width - 10, 100);
+    } else {
+        text("Min: -∞", width - 10, 28);
+        text("Max: "+ -translateY.value()/50, width - 10, 52);
+        text("Domain: (-∞, ∞)", width - 10, 76);
+        text("range: ( -∞, " + -translateY.value()/50 + "]", width - 10, 100);
+    }
+    
+    text("Vertex : (" + translateX.value()/50 + ", " + -translateY.value()/50 + ")", width - 10, 124);
 }
 
 function drawCoords() {
