@@ -1,5 +1,10 @@
 var aValue;
 var q;
+var aValue;
+var translateX;
+var translateY;
+var flipX;
+var flipy;
 
 function setup() {
     createCanvas(800, 800);
@@ -29,13 +34,12 @@ function draw() {
     textSetup();
     drawCoords();
     drawSliderText();
-    //mininum
-    if (mouseY > height * 0.85 && mouseX > width/3 && mouseX < width * 0.66) {
-        textSize(width / 20);
-        fill(0);
-        strokeWeight(5);
-        stroke(255);
-        text("minimum:", width / 2, height * 0.9);
+    if (mouseY > height/2 + translateY.value() - 20 && mouseX >  width/2 + translateX.value() - 20 && mouseY < height/2 + translateY.value() + 20 && mouseX < width/2 + translateX.value() + 20) {
+        textAlign(CENTER);
+        text("Vertex", translateX.value() + width/2, translateY.value() + height/2 + 50);
+        strokeWeight(2);
+        line(0, translateY.value() + height/2, width, translateY.value() + height/2);
+        line(translateX.value() + width/2, 0, translateX.value() + width/2, height);
     }
     m.show();
     var stretch = aValue.value();
@@ -109,8 +113,8 @@ function drawCoords() {
             
         }
     }
-    line(0, height/2, width, height/2)
-    line(width/2, 0, width/2, height)
+    line(0, height/2, width, height/2);
+    line(width/2, 0, width/2, height);
 }
 class quadratic {
     constructor(x, y, width, height, p1, p2) {
