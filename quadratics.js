@@ -10,7 +10,7 @@ var canvas;
 function setup() {
     canvas = createCanvas(800, 800);
     canvas.class('round-canvas');
-    canvas.class('display', 'block');
+//     canvas.class('display', 'block');
     var cx = (windowWidth - width) / 2;
     var cy = (windowHeight - height) / 2;
     canvas.position(cx, cy);
