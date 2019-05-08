@@ -28,7 +28,7 @@ function setup() {
     flipY = createSlider(0, 1, 0, 1);
     flipY.position(cx + 15, cy + 110);
     flipY.style('width', '120px');
-    q = new quadratic(width / 2, (-height) - height / 2, width * 0.25, height * 4, 0, PI); //parent var q = new quadratic(width/2, 0, width * 0.25, height, 0, PI);
+    q = new quadratic(width / 2, (-height) - height / 2, width * 0.5, height * 4, 0, PI); //parent var q = new quadratic(width/2, 0, width * 0.25, height, 0, PI);
 }
 
 function draw() {
