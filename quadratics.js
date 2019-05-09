@@ -9,10 +9,15 @@ var canvas;
 
 function setup() {
     canvas = createCanvas(800, 800);
-    canvas.class('round-canvas');
-    var cx = (windowWidth - width) / 2;
-    var cy = (windowHeight - height) / 2;
-    canvas.position(cx, cy);
+    // canvas.class('round-canvas');
+    //canvas.style('display', 'block');
+    //canvas.style('position', 'relative');
+    // var cx = (windowWidth - width) / 2;
+    //var cy = (windowHeight - height) / 2;
+    // var cy = 100;
+    var cx = 0; 
+    var cy = 0;
+    // canvas.position(cx, cy);
     aValue = createSlider(-8, 8, 0, 1);
     aValue.position(cx + 15, cy + 10);
     aValue.style('width', '120px');
