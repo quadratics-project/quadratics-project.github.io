@@ -45,7 +45,7 @@ function setup() {
 
 function draw() {
     positionCanvas();
-    var m = new mouse();
+    //var m = new mouse();
     background(255);
     arcSetup();
     q.show();
