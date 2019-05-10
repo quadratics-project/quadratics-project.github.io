@@ -59,7 +59,7 @@ function draw() {
         line(0, translateY.value() + height / 2, width, translateY.value() + height / 2);
         line(translateX.value() + width / 2, 0, translateX.value() + width / 2, height);
     }
-    m.show();
+    //m.show();
     var stretch = aValue.value();
     if (stretch != 0) {
         q.setA(stretch);
