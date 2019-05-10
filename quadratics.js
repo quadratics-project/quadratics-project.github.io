@@ -9,30 +9,37 @@ var canvas;
 
 function setup() {
     canvas = createCanvas(800, 800);
-    // canvas.class('round-canvas');
+    canvas.class('round-canvas');
+    canvas.style('z-index', '-1');
+    canvas.parent('sketch-container');
     //canvas.style('display', 'block');
     //canvas.style('position', 'relative');
-    // var cx = (windowWidth - width) / 2;
+    var cx = (windowWidth - width) / 2;
     //var cy = (windowHeight - height) / 2;
     // var cy = 100;
-    var cx = 0; 
-    var cy = 0;
+    //var cx = 0; 
+    // var cy = 200;
     // canvas.position(cx, cy);
     aValue = createSlider(-8, 8, 0, 1);
-    aValue.position(cx + 15, cy + 10);
+    aValue.position(15, 10);
     aValue.style('width', '120px');
+    aValue.parent('sliders');
     translateX = createSlider(-1 * ((width - 100) / 2), (width - 100) / 2, 1, 50);
-    translateX.position(cx + 15, cy + 35);
+    translateX.position(15, 35);
     translateX.style('width', '120px');
+    translateX.parent('sliders');
     translateY = createSlider(-1 * ((height - 100) / 2), (height - 100) / 2, 1, 50);
-    translateY.position(cx + 15, cy + 60);
+    translateY.position(15, 60);
     translateY.style('width', '120px');
+    translateY.parent('sliders');
     flipX = createSlider(0, 1, 0, 1);
-    flipX.position(cx + 15, cy + 85);
+    flipX.position(15, 85);
     flipX.style('width', '120px');
+    flipX.parent('sliders');
     flipY = createSlider(0, 1, 0, 1);
-    flipY.position(cx + 15, cy + 110);
+    flipY.position(15, 110);
     flipY.style('width', '120px');
+    flipY.parent('sliders');
     q = new quadratic(width / 2, (-height) - height / 2, width * 0.5, height * 4, 0, PI); //parent var q = new quadratic(width/2, 0, width * 0.25, height, 0, PI);
 }
 
@@ -64,13 +71,14 @@ function draw() {
 
 function positionCanvas() {
     var cx = (windowWidth - width) / 2;
-    var cy = (windowHeight - height) / 2;
-    canvas.position(cx, cy);
-    aValue.position(cx + 15, cy + 10);
-    translateX.position(cx + 15, cy + 35);
-    translateY.position(cx + 15, cy + 60);
-    flipX.position(cx + 15, cy + 85);
-    flipY.position(cx + 15, cy + 110);
+    // var cy = (windowHeight - height) / 2;
+    //var cy = 200;
+    //canvas.position(cx, cy);
+    // aValue.position(cx + 15, cy + 10);
+    // translateX.position(cx + 15, cy + 35);
+    // translateY.position(cx + 15, cy + 60);
+    // flipX.position(cx + 15, cy + 85);
+    // flipY.position(cx + 15, cy + 110);
 }
 function arcSetup() {
     stroke(0);

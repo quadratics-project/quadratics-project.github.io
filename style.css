@@ -44,23 +44,55 @@ table {
 /*End css reset*/
 
 body {
-  text-align: center;
-  font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #E6E6E6;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Courier New', Courier, monospace;
+	background-color: #E6E6E6;
 }
 
 h1 {
-  font-size: 300%;
-  margin: 16px 10px 16px;
-}
+	font-size: 300%;
+	margin: 16px 10px 16px;
+	}
 
 p {
-  font-size: 16px;
-  line-height: 1.2em;
+	font-size: 16px;
+	line-height: 1.2em;
 }
 
 .round-canvas {
-  /* border: 20px solid white; */
-  border-radius: 20px;
+	/* border: 20px solid white; */
+	border-radius: 20px;
+}
+
+.button-container {
+	margin: 20px;
+}
+.button {
+	border-radius: 10px;
+	background-color: white;
+	color: black;
+	padding: 10px;
+	/*
+	background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 2% 8px;
+    width: 100px;
+    font-weight: bold;
+    font-family: helvetica;
+    border-radius: 10px;*/
+}
+
+.button:hover {
+	box-shadow: 0 4px 4px black;
+}
+
+#sketch-container {
+	position: relative;
+	width: 800px;
+	margin: 10px auto;
 }
