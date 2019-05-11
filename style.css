@@ -87,7 +87,7 @@ p {
     border-radius: 10px;*/
 }
 
-.button:hover {
+a:hover {
 	box-shadow: 0 4px 4px black;
 }
 
