@@ -68,6 +68,7 @@ p {
 .round-image {
 	/* border: 20px solid white; */
 	border-radius: 20px;
+	display: block;
 }
 
 .button-container {
