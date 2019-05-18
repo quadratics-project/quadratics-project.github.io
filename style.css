@@ -69,6 +69,10 @@ p {
 	/* border: 20px solid white; */
 	border-radius: 20px;
 	display: block;
+	left: 50%;
+	right: 50%;
+	margin: auto;
+	margin-top: 10px;
 }
 
 .button-container {
