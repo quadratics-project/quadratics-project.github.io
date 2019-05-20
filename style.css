@@ -70,6 +70,7 @@ p {
 	border-radius: 20px;
 	display: block;
 	left: 50%;
+	width: 50%;
 	right: 50%;
 	margin: auto;
 	margin-top: 10px;
